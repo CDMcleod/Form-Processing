@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Purchase Order</title>
+	
+	<style>
+		body{background-color:white; color:black;}
+	</style>
+	
+	<h1>Purchase Order</h1>
+	
+	<script type = "text/javascript" src = "FormValidator.js"></script>
+	<script>
+	function recordAnswer(answer) {
+    document.forms[0].card_type.value = answer;
+	document.forms[0].card_type.checked = true;
+}
+	</script>
+</head>
+<body>
+	<h2>Products</h2>
+	<form action="FormProcessor.html" onsubmit = "return validate()" method="get">
+	<p><b><u>Please fill in all of the following fields</u></b></p><br>
+	<p>Hand Tools:
+		
+		<select name = "HandTools" value = "Hand Tools">
+			<option selected disabled>Hand Tool</option>
+			<option value="Saw">Saw</option>
+			<option value="Hammer">Hammer</option>
+			<option value="Screwdriver">Screwdriver</option>
+			<option value="Wrench">Wrench</option>
+			<option value="Pliers">Pliers</option>
+		</select>
+	
+		Power Tools: 
+
+		<select name = "PowerTools" value = "Power Tools">
+			<option selected disabled>Power Tool</option>
+			<option value="Circular Saw">Circular Saw</option>
+			<option value="Sabre Saw">Sabre Saw</option>
+			<option value="Drill">Drill</option>
+			<option value="Belt">Belt</option>
+			<option value="Sander">Sander</option>
+			<option value="Table Saw">Table Saw</option>
+		</select>
+	
+		Building Materials:
+	
+		<select name = "BuildingMats" value = "Building Materials">
+			<option selected disabled>Material</option>
+			<option value="Plywood">Plywood</option>
+			<option value="Shingles">Shingles</option>
+			<option value="Nails">Nails</option>
+			<option value="Screws">Screws</option>
+		</select>
+	</p>
+	<!-- <p><input type="submit" value=" Submit Order"></p> -->
+	
+	
+	<h2>Customer Information</h2>
+	
+		<p>First Name:
+		<input type = "Text" id = "firstNameBox" name = "first_name" value = "First Name">
+		Last Name:
+		<input type = "Text" id = "lastNameBox" name = "last_name" value = "Last Name"></p>
+		<p>Street Address 1:
+		<input type = "Text" id = "addressBoxOne" name = "address1" value = "Primary Address"></p>
+		<p>Street Address 2(not required):
+		<input type = "Text" id = "addressBoxTwo" name = "address2" value = "Secondary Address"></p>
+		<p>City:
+		<input type = "Text" id = "cityBox" name = "city" value = "City">
+		State:
+		<input type = "Text" id = "stateBox" name = "state" value = "State(e.g. SC)">
+		Zip Code:
+		<input type = "Text" id = "zipCodeBox" name = "zip_code" value = "Zip Code"></p>
+		<p>Phone:
+		<input type = "Text" id = "phoneBox" name = "phone" value = "Phone">
+		Fax:
+		<input type = "Text" id = "faxBox" name = "fax" value = "Fax"></p>
+		
+		<p>Payment Method?
+		<input type="radio" name="card_type" value="Visa" onclick=
+		"recordAnswer(this.value);" >Visa
+		<input type="radio" name="card_type" value="MasterCard" onclick=
+		"recordAnswer(this.value);" >MasterCard
+		<input type="radio" name="card_type" value="American Express" onclick=
+		"recordAnswer(this.value);" >American Express</p><br>
+		
+		<p>Credit Card Number:
+		<input type = "Text" id = "cardBox" name = "card_number" value = "Card Number"></p>
+		<p>Expiration Month:
+		<select name = "expiration_month" value = "month">
+			<option selected disabled>Month</option>
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select>
+		
+		Expiration Year:
+		<select name = "expiration_year" value = "year">
+			<option selected disabled>Year</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+		</select></p>
+		
+	<p><input type="submit" id = "submit_btn" value=" Submit Order"></p>
+	</form>
+</body>
+</html>
